@@ -23,6 +23,11 @@ export default function Index() {
             name: "teoria",
             href: "(teoria)"
         },
+        {
+            id: 3,
+            name: "tabs",
+            href: "(tabs)"
+        }
     ]
 
     const renderItem = ({ item }: { item: Ruta }) => {
