@@ -12,25 +12,7 @@ interface SectionData {
     data: ProductoItem[];
 }
 
-export function List() {
-
-    const dataList: ProductoItem[] = [
-        {
-            id: 1,
-            producto: "Cerveza",
-            precio: "$ 60",
-        },
-        {
-            id: 2,
-            producto: "Sabritas",
-            precio: "$ 20"
-        },
-        {
-            id: 3,
-            producto: "Agua mineral",
-            precio: "$ 20"
-        }
-    ]
+export function SectionListComponent() {
 
     const dataSection: SectionData[] = [
         {
@@ -81,9 +63,6 @@ export function List() {
 
     return (
         <Container>
-            <Title>FlatList</Title>
-            <ListaFlat keyExtractor={(item: ProductoItem) => item.id.toString()} data={dataList} renderItem={renderItem} 
-            />
             <Title>SectionList</Title>
             <SectionList keyExtractor={(item: ProductoItem) => item.id.toString()} sections={dataSection} renderItem={renderItem}
             renderSectionHeader={renderHeader} ListFooterComponent={footerList} />
@@ -100,7 +79,6 @@ const Container = styled.View`
 flex: 1;
 justify-content: center;
 align-items: center;
-background-color: #000
 `
 
 // Estilos para el renderItem del FlatList
