@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { ActivityIndicator, FlatList } from 'react-native';
 import styled from 'styled-components/native';
 
-export function FlatListComponent() {
+export default function FlatListComponent() {
     const [data, setData] = useState<string[]>([]);
     const [loading, setLoading] = useState<boolean>(false);
     const [page, setPage] = useState<number>(1);

@@ -1,7 +1,7 @@
 import styled from "styled-components/native";
 import { LinearGradient } from 'expo-linear-gradient';
 
-export function Gradientes() {
+export default function Gradientes() {
 
     return (
         <Container>

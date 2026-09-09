@@ -12,7 +12,7 @@ interface SectionData {
     data: ProductoItem[];
 }
 
-export function SectionListComponent() {
+export default function SectionListComponent() {
 
     const dataSection: SectionData[] = [
         {

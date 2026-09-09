@@ -1,6 +1,6 @@
 import styled from "styled-components/native";
 
-export function Index() {
+export default function Index() {
 
     return (
         <Container>

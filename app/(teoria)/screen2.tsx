@@ -2,7 +2,7 @@ import { useRouter } from "expo-router"
 import { useLocalSearchParams } from "expo-router/build/hooks";
 import { Button, Text, View } from "react-native"
 
-export function Screen2() {
+export default function Screen2() {
     const router = useRouter();
     const data = useLocalSearchParams();
     return (

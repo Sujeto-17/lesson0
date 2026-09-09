@@ -1,6 +1,6 @@
 import styled from "styled-components/native";
 
-export function About() {
+export default function About() {
 
     return (
         <Container>
