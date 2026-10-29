@@ -5,7 +5,7 @@ import { MaterialIcons } from "@expo/vector-icons";
 import { StatusBar } from "expo-status-bar";
 
 interface Ruta {
-    id: number
+    id: number;
     name: string;
     href: string;
 }
@@ -27,13 +27,17 @@ export default function Index() {
             id: 3,
             name: "tabs",
             href: "(tabs)"
-        }
+        },
+        {
+            id: 4,
+            name: "Pokedex",
+            href: "(2-pokedex)"
+        },
     ]
 
     const renderItem = ({ item }: { item: Ruta }) => {
         return (
             <TouchableOpacity onPress={() => router.push(item.href as any)}>
-                <StatusBar style="light"/>
                 <ButtonLink>
                     <IconContainer>
                         <MaterialIcons name="insert-drive-file" size={24} color={"#fff"} />
@@ -45,11 +49,15 @@ export default function Index() {
         )
     }
 
-
     return (
-        <Container style={{padding:Platform.OS === "ios" ? 0: 50}}>
+        <Container style={{ padding: Platform.OS === "ios" ? 0 : 50 }}>
+            <StatusBar style="light" />
             <Title>Menu</Title>
-            <List keyExtractor={(item) => item.id.toString()} data={dataRutas} renderItem={renderItem}></List>
+            <List
+                keyExtractor={(item: Ruta) => item.id.toString()}
+                data={dataRutas}
+                renderItem={renderItem}
+            />
         </Container>
     )
 }
@@ -66,19 +74,18 @@ const Title = styled.Text`
    margin-bottom: 10px;
    font-size: 20px;
    font-weight: bold;
-   `
+`
 
-// Estilos para el renderItem
 const ButtonLink = styled.View`
    padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 20px;
-    flex-direction: row;
-    align-items: center;
-    border: 2px solid #333;
-    justify-content: space-between;
-    width: 100%;
-    display: flex;
+   margin-bottom: 10px;
+   border-radius: 20px;
+   flex-direction: row;
+   align-items: center;
+   border: 2px solid #333;
+   justify-content: space-between;
+   width: 100%;
+   display: flex;
 `
 
 const Name = styled.Text`
@@ -88,15 +95,16 @@ const Name = styled.Text`
 
 const Arrow = styled(MaterialIcons)`
    color: #fff;
-   font-size: 30px
+   font-size: 30px;
 `
+
 const IconContainer = styled.View`
    flex-direction: row;
    align-items: center;
-   gap:5px;
+   gap: 5px;
 `
 
-const List = styled(FlatList)`
-   width: 100%
+const List = styled(FlatList<Ruta>)`
+   width: 100%;
    padding: 10px;
 `

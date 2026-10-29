@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import styled from 'styled-components/native';
-import { FlatListComponent } from "./flatlist";
-import { SectionListComponent } from "./sectionlist"
+import  FlatListComponent from "./flatlist";
+import SectionListComponent from "./sectionlist"
 import { Platform, StatusBar } from 'react-native';
-import { Gradientes } from './gradiente';
+import Gradientes from './gradiente';
+import Fetch from './fetch';
 import { LinearGradient } from 'expo-linear-gradient';
 
 export default function Index() {
@@ -23,11 +24,17 @@ export default function Index() {
             id: 3,
             name: "Gradientes",
             component: <Gradientes />
-        }
+        },
+        {
+            id: 4,
+            name: "Fetch",
+            component: <Fetch />
+        },
     ]
 
     const [selectedCategory, setSelectedCategory] = useState(dataCategorias[0]);
 
+    
     return (
         <Container style={{ paddingTop: Platform.OS === "ios" ? 0 : 50 }}>
             <GradientBackground/>
@@ -66,7 +73,7 @@ position: relative;
 `
 
 const CategoriasSection = styled.View`
-flex-warp: warp;
+flex-wrap: wrap;
 flex-direction: row;
 margin-top: 10px;
 `
